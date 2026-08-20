@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f5">
+  <meta name="description" content="Личный кабинет Аэрофлота — кейс Алексея Лисина">
+  <meta property="og:title" content="Личный кабинет Аэрофлота — Алексей Лисин">
+  <meta property="og:description" content="Личный кабинет и сервисы программы «Аэрофлот Бонус».">
+  <meta property="og:image" content="../assets/images/aeroflot/aeroflot-account.png">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="../case.css">
+  <title>Личный кабинет Аэрофлота — Алексей Лисин</title>
+</head>
+<body>
+  <main class="case-page">
+    <header class="case-header">
+      <div class="case-header-main">
+        <a class="case-contact case-back-link" href="../index.html?restore-scroll=1" aria-label="Вернуться на главную"><img src="../assets/icons/link.svg" alt=""></a>
+        <div class="case-header-copy">
+          <h1 class="case-title">Личный кабинет Аэрофлота</h1>
+          <p class="case-subtitle">Личный кабинет и сервисы программы «Аэрофлот Бонус»</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="case-facts" aria-label="О проекте">
+      <div class="case-row">
+        <p class="case-label">Роль</p>
+        <p class="case-value">UX/UI-дизайнер</p>
+      </div>
+
+      <div class="case-row">
+        <p class="case-label">Задизайнено в</p>
+        <p class="case-value">JetStyle, 2019</p>
+      </div>
+
+      <div class="case-row">
+        <p class="case-label">Как была построена работа</p>
+        <p class="case-value">Я разбирался в требованиях и существующих сценариях, проектировал новые экраны и состояния. Решения обсуждал внутри команды, а спорные моменты напрямую уточнял с представителями Аэрофлота на звонках. После согласования дорабатывал макеты по обратной связи и сопровождал их до передачи в разработку.</p>
+      </div>
+
+      <div class="case-row">
+        <p class="case-label">Что я делал</p>
+        <div class="case-value">
+          <p>Личный кабинет: профиль и настройки пользователя, редактирование персональных данных, безопасность аккаунта и двухфакторная аутентификация.</p>
+          <p>Также работал над интерфейсами программы «Аэрофлот Бонус», калькулятором миль, сервисными страницами и коммуникациями.</p>
+        </div>
+      </div>
+    </section>
+
+    <figure class="case-media case-media--account">
+      <img src="../assets/images/aeroflot/aeroflot-account.png" width="4096" height="2913" alt="Настройки личного кабинета Аэрофлота и калькулятор миль">
+      <figcaption>Настройка ЛК и калькулятор миль</figcaption>
+    </figure>
+
+    <figure class="case-media case-media--security">
+      <img src="../assets/images/aeroflot/aeroflot-security.png" width="3456" height="1772" alt="Безопасность аккаунта Аэрофлота и двухфакторная аутентификация">
+      <figcaption>Безопасность аккаунта и двухфакторная аутентификация</figcaption>
+    </figure>
+
+    <footer class="case-footer">
+      <a class="case-contact case-home-link" href="../index.html?restore-scroll=1"><img src="../assets/icons/link.svg" alt="">Вернуться на главную</a>
+      <nav class="case-contacts" aria-label="Контакты">
+        <a class="case-contact case-phone" href="tel:+79126221178">8 (912) 622-11-78</a>
+        <a class="case-contact case-telegram" href="http://t.me/lisin_n" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><img src="../assets/icons/tg.svg" alt=""></a>
+        <button class="case-contact email-copy" type="button" data-email="lisinalexey@yandex.ru" aria-label="Скопировать почту"><span class="email-mark email-mark--default"><img src="../assets/icons/email.svg" alt=""></span><span class="email-mark email-mark--copy" aria-hidden="true"><img src="../assets/icons/copy.svg" alt=""></span><span class="email-mark email-mark--check" aria-hidden="true"><img src="../assets/icons/check.svg" alt=""></span></button>
+        <a class="case-contact case-linkedin" href="https://www.linkedin.com/in/alexlsn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="../assets/icons/in.svg" alt=""></a>
+      </nav>
+    </footer>
+  </main>
+  <div class="copy-toast" role="status" aria-live="polite">Почта скопирована</div>
+  <script>
+    const copyToast = document.querySelector('.copy-toast');
+    document.querySelectorAll('.email-copy').forEach(button => {
+      button.addEventListener('click', async () => {
+        const email = button.dataset.email;
+        try { await navigator.clipboard.writeText(email); }
+        catch { const field = Object.assign(document.createElement('textarea'), { value: email }); document.body.append(field); field.select(); document.execCommand('copy'); field.remove(); }
+        button.classList.add('copied');
+        copyToast.classList.add('visible');
+        setTimeout(() => button.classList.remove('copied'), 1400);
+        setTimeout(() => copyToast.classList.remove('visible'), 1800);
+      });
+    });
+  </script>
+</body>
+</html>

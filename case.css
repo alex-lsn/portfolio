@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+:root {
+  --paper: #f6f7f5;
+  --ink: #101010;
+  --muted: #a4a2a2;
+  --line: #d9d9d9;
+  --case-max: 1508px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+}
+
+a { color: inherit; }
+
+a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.case-page {
+  width: min(var(--case-max), calc(100% - 48px));
+  margin: 0 auto;
+  padding: 108px 0 42px;
+}
+
+.case-header {
+  margin-bottom: 64px;
+}
+
+.case-header--with-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.case-header-main {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 12px;
+  row-gap: 16px;
+  min-width: 0;
+}
+
+.case-header-copy { display: contents; }
+
+.case-title {
+  grid-column: 2;
+  margin: 0;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+}
+
+.case-subtitle {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+}
+
+.case-facts {
+  border-top: 1px solid var(--line);
+}
+
+.case-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.case-label,
+.case-value {
+  min-width: 0;
+  margin: 0;
+}
+
+.case-label { color: var(--muted); }
+
+.case-value p {
+  margin: 0 0 28px;
+}
+
+.case-value p:last-child { margin-bottom: 0; }
+
+.case-media {
+  margin: 64px 0 0;
+}
+
+.case-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  background: #e2e3e8;
+}
+
+.case-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  background: #e2e3e8;
+}
+
+.case-media iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 20px;
+  background: #e2e3e8;
+}
+
+.case-media figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.case-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 110px;
+}
+
+.case-contacts {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.case-contact {
+  display: grid;
+  flex: 0 0 auto;
+  width: 63px;
+  height: 63px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e2e3e8;
+  color: var(--ink);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.case-contact:hover {
+  transform: translateY(-2px);
+}
+
+.case-back-link {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+.case-back-link img {
+  display: block;
+  position: relative;
+  left: -1px;
+  width: 18px;
+  height: 18px;
+  transform: rotate(180deg);
+}
+
+.case-home-link,
+.case-phone,
+.case-site-link {
+  width: auto;
+  min-width: 205px;
+  padding: 0 24px;
+  border-radius: 60px;
+  font-size: 20px;
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+}
+
+.case-home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.case-home-link img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  transform: rotate(180deg);
+}
+
+.case-site-link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-site-link img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.case-telegram svg {
+  width: 24px;
+  height: 24px;
+}
+
+.case-linkedin {
+  padding-right: 2px;
+  font-size: 33px;
+  font-weight: 600;
+  letter-spacing: -2.5px;
+}
+
+.email-copy {
+  position: relative;
+  border: 0;
+  cursor: copy;
+  font-family: inherit;
+}
+
+.email-mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.case-contact > img,
+.email-mark > img { display: block; }
+
+.email-mark--default { opacity: 1; }
+
+.email-copy:hover .email-mark--default,
+.email-copy:focus-visible .email-mark--default,
+.email-copy.copied .email-mark--default { opacity: 0; }
+
+.email-copy:hover .email-mark--copy,
+.email-copy:focus-visible .email-mark--copy,
+.email-copy.copied .email-mark--check { opacity: 1; }
+
+.email-copy.copied .email-mark--copy { opacity: 0; }
+
+.copy-toast {
+  position: fixed;
+  z-index: 30;
+  bottom: 24px;
+  left: 50%;
+  padding: 10px 14px;
+  border-radius: 20px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.copy-toast.visible { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+  .case-page {
+    width: calc(100% - 32px);
+    padding: 48px 0 32px;
+  }
+
+  .case-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .case-header { margin-bottom: 40px; }
+
+  .case-header--with-link {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .case-header-main { column-gap: 12px; }
+
+  .case-back-link {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .case-back-link img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .case-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .case-media { margin-top: 40px; }
+
+  .case-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 64px;
+  }
+
+  .case-home-link { display: none; }
+
+  .case-contacts {
+    align-self: center;
+    width: auto;
+    flex-wrap: nowrap;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .case-contacts {
+    width: 205px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .case-phone { order: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
